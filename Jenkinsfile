@@ -4,21 +4,18 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Clone the repository
-                git branch: 'main', url: 'https://github.com/harshssn23/javaaa.git'
+                git branch: 'main', url: 'https://github.com/Amit6006/test_jenkin.git'
             }
         }
 
         stage('Compile') {
             steps {
-                // Compile the Java program using 'javac'
                 bat 'javac Test.java'
             }
         }
 
         stage('Run') {
             steps {
-                // Run the compiled Java program
                 bat 'java Test'
             }
         }
@@ -26,7 +23,6 @@ pipeline {
 
     post {
         always {
-            // Clean up the workspace
             cleanWs()
         }
         success {
